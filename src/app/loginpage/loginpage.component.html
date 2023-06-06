@@ -1,0 +1,12 @@
+<form [formGroup]="loginData" (ngSubmit)="onSubmit()">
+    <label>Username: </label>
+    <input type="text" placeholder="Enter Username" formControlName="username">
+    <br><br>
+    <input type="text" placeholder="Enter Password" formControlName="password">
+    <br><br>
+    <!-- <button [disabled]="loading" class="btn btn-primary"> -->
+        <button>
+        <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
+        Login
+    </button>
+</form>
