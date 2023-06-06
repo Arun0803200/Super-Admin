@@ -1,0 +1,57 @@
+<html>
+    <head class="bg-red-100 py-3">
+    </head>
+    <body>
+        <br>
+        <p>
+            <button class="btn btn-nd btn-outline-primary" (click)="goToPage()" style="float: right; margin-right: 10px;"> <i class="fa fa-user"></i> new user</button>
+        </p> <br> <br>
+        <div class="outer">
+            <div class="lefterJoin">
+                <form [formGroup]="filterForm">
+                    <h5 class="heder5">Filter</h5>
+                    <br>
+                    <label class="lab">University Name :</label><br>
+                    <input class="inputs" type="text" placeholder="Enter university name" formControlName="universityName">
+                    <br>
+                    <br>
+                    <br>
+                    <label class="lab">College Name :</label><br>
+                    <input class="inputs" type="text" placeholder="Enter college name" formControlName="collegeName">
+                    <p><button class="button1" (click)="onSubmit()">Submit</button> <button (click)="resets()" class="button2">Reset</button> </p>
+                </form>
+            </div>
+            <div class="first">
+                <table class = "center" style="width:100%; margin-right: 10px">
+                    <thead class="header">
+                        <tr style="text-align:center">
+                            <td>Email</td>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of customer | paginate: {itemsPerPage:10,currentPage:p};" style="text-align:center">
+                            <td>{{item.email}}</td>
+                            <td>{{item.firstName}}</td>
+                            <td>{{item.lastName}}</td>
+                            <td>
+                            <img class="edit" src="../../assets/edit.jpeg" alt="Edit" width="25" height="25" (click)="edit(item._id)">
+                            <img mwlConfirmationPopover
+                            [popoverTitle]="popoverTitle"
+                            [popoverMessage]="popoverMessage"
+                            placement="left"
+                            (confirm)="delete(item._id)"
+                            (cancle)="cancleClicked=true" class="delete" src="../../assets/delete.jpeg" alt="Delete" width="25" height="25">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <pagination-controls (pageChange)="p=$event" style="float: right; position: absolute;right:35%;bottom:5%;"></pagination-controls>
+                </table>
+                
+            </div>
+         
+        </div>
+        </body>
+</html>

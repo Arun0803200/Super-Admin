@@ -1,0 +1,22 @@
+div.border {
+    border-style: solid;
+    border-width: thick;
+    background-color: rgb(202, 184, 218);
+}
+.submit {
+    background-color: rgb(204, 0, 255);
+    float: right;
+    margin-right: 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 60px;
+}
+.cancel {
+     background-color: rgb(0, 0, 0);
+     color: white;
+     float: left;
+     border-radius: 5px;
+     border: none;
+     font-size: 17px;
+}
