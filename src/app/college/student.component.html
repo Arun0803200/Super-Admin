@@ -1,0 +1,64 @@
+<div class="border" style="margin: 10px; border-radius: 10px; padding: 10px;">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <h5> <b>Create College Detail :-</b> </h5>
+        <br>
+        <div>
+            <h5><b>Personal Info :-</b></h5>
+            <p>
+                <label><b>Email</b></label>&nbsp;
+                <input type="text" formControlName="email">&nbsp;&nbsp;
+                <label><b>Password</b></label>&nbsp;
+                <input type="text" formControlName="password">&nbsp;&nbsp;
+                <label><b>Confirm Password</b></label>&nbsp;
+                <input type="text" formControlName="">&nbsp;&nbsp;
+            <br>
+            <br>
+                <label> <b>First Name:</b> </label> &nbsp;
+                <input type="text" formControlName="firstName"> &nbsp;&nbsp;
+                <label> <b>Last Name:</b> </label>&nbsp;
+                <input type="text" formControlName="lastName">
+            </p>
+        </div>
+        <br>
+        <div>
+            <hr> <br>
+            <h5><b>Address Info :-</b></h5>
+            <p>
+                <label> <b>Address 1:</b> </label>&nbsp;
+                <input type="text" formControlName="address1">&nbsp;&nbsp;
+                <label> <b>Address 2:</b> </label>&nbsp;
+                <input type="text" formControlName="address2">&nbsp;&nbsp;
+                <label> <b>City:</b> </label>&nbsp;
+                <input type="text" formControlName="city">
+                <br>
+                <br>
+                <label> <b>State:</b> </label>&nbsp;
+                <input type="text" formControlName="state">&nbsp;&nbsp;
+                <label> <b>Country:</b> </label>&nbsp;
+                <input type="text" formControlName="country">&nbsp;&nbsp;
+                <label> <b>Mobile Number:</b> </label>&nbsp;
+                <input type="text" formControlName="mobileNumber">
+            </p>
+        </div>
+        <br>
+        <div>
+            <hr> <br>
+            <h5><b>College Info :-</b></h5>
+            <p>
+                <label> <b>University Name:</b> </label>&nbsp;
+                <input type="text" formControlName="universityName">&nbsp;&nbsp;
+                <label> <b>College Name:</b> </label>&nbsp;
+                <input type="text" formControlName="collegeName">&nbsp;&nbsp;
+                <label> <b>College Code:</b> </label>&nbsp;
+                <input type="text" formControlName="collegeCode">
+            </p>
+        </div>
+        <br>
+        <br>
+        <p>
+        <button style="float: right;">submit</button> <button style="float: left; margin-right: 20px;" (click)="cancle()">Cancle</button>
+        </p>
+        <br>
+    </form>
+    <br>
+</div>

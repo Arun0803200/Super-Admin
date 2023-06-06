@@ -1,0 +1,5 @@
+div.border {
+    border-style: solid;
+    border-width: thick;
+    background-color: rgb(202, 184, 218);
+}
