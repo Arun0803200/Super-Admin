@@ -1,12 +1,39 @@
-<form [formGroup]="loginData" (ngSubmit)="onSubmit()">
-    <label>Username: </label>
-    <input type="text" placeholder="Enter Username" formControlName="username">
-    <br><br>
-    <input type="text" placeholder="Enter Password" formControlName="password">
-    <br><br>
-    <!-- <button [disabled]="loading" class="btn btn-primary"> -->
-        <button>
-        <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
-        Login
+<div class="outer">
+<div class="loginPage">
+<form class="loginForm" [formGroup]="loginData">
+    <h5 style="font-size: 20px;">Login</h5>
+    <div>
+    <label class="lab">Username: </label> <br>
+    <input class="inputs" type="text" placeholder="Enter Username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginData.controls.username.errors}">
+    <div *ngIf="submitted && loginData.controls.username.errors" class="invalid-feedback">
+        <div *ngIf="submitted && loginData.controls.username.errors">* Username is required</div>
+    </div>
+    </div>
+    <br>
+    <div>
+    <label class="lab">Password: </label> <br>
+    <input class="inputs" type="text" placeholder="Enter Password" formControlName="password" class="form-control"[ngClass]="{ 'is-invalid': submitted && loginData.controls.password.errors}">
+    <div  *ngIf="submitted && loginData.controls.password.errors" class="invalid-feedback">
+    <div *ngIf="submitted && loginData.controls.password.errors">* Password is required</div>
+    </div>
+    </div>
+    <br>
+    <p>
+        <button class="btn1" (click)="onSubmit()">
+        Submit
     </button>
+    <button class="btn2" (click)="reset()">
+        Re-Set
+    </button>
+</p>
+<a class="forpass" (click)="forgotPassword()">
+    forgot password
+</a>
 </form>
+</div>
+<div>
+    <br>
+    <br>
+    <br>
+</div>
+</div>

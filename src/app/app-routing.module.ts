@@ -5,6 +5,8 @@ import { FirstComponentComponent } from './first-component/first-component.compo
 import { EditComponent } from './edit/edit.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { PDFGenerationComponent } from './pdfgeneration/pdfgeneration.component';
+import { IochatComponent } from './iochat/iochat.component';
 const routes: Routes = [
   {path: '', component: LoginpageComponent},
   {
@@ -14,6 +16,8 @@ const routes: Routes = [
       {path: '', component: FirstComponentComponent},
       {path: 'student', component: StudentComponent},
       {path: 'edit/:id', component: EditComponent},
+      {path: 'personal', component: PDFGenerationComponent},
+      {path: 'iochat', component: IochatComponent}
     ]
   },
 ];

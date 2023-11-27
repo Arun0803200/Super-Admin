@@ -1,0 +1,55 @@
+.labelStyle {
+  font-weight: 500;
+}
+
+.common {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-tooltip-button {
+    position: relative;
+    border: 2px solid #838181;
+    width: 5%;
+    font-weight: 400;
+    border-radius: 2px;
+    background-color: rgb(6, 207, 6);
+    padding: 5px;
+    color: white;
+  }
+  
+  .tooltip-text {
+    display: none;
+  }
+  
+  .custom-tooltip-button:hover .tooltip-text {
+    display: block;
+    position: absolute;
+    top: -25px; /* Adjust the distance of the tooltip from the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4e4e4e;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  

@@ -62,11 +62,11 @@ resets() {
   });
 }
 onSubmit() {
-  const value = this.filterForm.value
+  const value = this.filterForm.value;
   this.userService.GetData(0, 0, value.collegeName, value.universityName).subscribe(data => {
     const value: any = data;
     this.customer = [];
-    this.customer = value.data
+    this.customer = value.data;
   });
   console.log('submitssss', this.filterForm.value, this.customer)
 }
