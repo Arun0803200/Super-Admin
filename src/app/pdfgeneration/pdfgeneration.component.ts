@@ -93,7 +93,7 @@ export class PDFGenerationComponent {
   handleFileSelect(evt: any){
       var files = evt.target.files;
       var file = files[0];
-      console.log(file.type, 'typeeeeeeeee');
+      console.log(file.type, 'typeeeeeeeee', file.name);
     if (files && file) {
         var reader = new FileReader();
 
