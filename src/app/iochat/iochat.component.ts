@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import io from 'socket.io-client';
+// @ts-ignore
+import {load} from '@cashfreepayments/cashfree-js';
 @Component({
   selector: 'app-iochat',
   templateUrl: './iochat.component.html',
@@ -14,6 +16,7 @@ export class IochatComponent {
     this.socket = io('http://localhost:3001');
   }
 
+  cashfree: any;
   ngOnInit() {
     this.socket.on('message', (message: string) => {
       this.messages.push(message);
@@ -23,5 +26,18 @@ export class IochatComponent {
   sendMessage() {
     this.socket.emit('message', this.message);
     this.message = '';
+  }
+  async pay() {
+    // Start the payment
+    this.cashfree = await load({
+      mode: 'sandbox',
+    });
+    let checkoutOptions = {
+      paymentSessionId: '',
+      redirectTarget: '_modal'
+    }
+    this.cashfree.checkout(checkoutOptions).then((value: any) => {
+      console.log(value);
+    })
   }
 }

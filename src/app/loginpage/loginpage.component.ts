@@ -32,6 +32,7 @@ export class LoginpageComponent {
   // }
   async onSubmit() {
     this.submitted = true;
+    this.router.navigate(['menubar'])
     if (this.loginData.invalid) {
       return;
     }
