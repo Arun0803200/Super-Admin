@@ -24,4 +24,8 @@ export class AuthService {
         return this.http
           .post<any>(`http://localhost:3000/api/admin-user/login`, loginData)
       }
+
+      razorpayOrder(data: any) {
+        return this.http.post(`http://localhost:3000/api/admin-user/razorpay-order`, data)
+      }
 }
