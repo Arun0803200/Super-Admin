@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotPasswordPopupComponent } from './forgot-password-popup/forgot-password-popup.component';
 import { PDFGenerationComponent } from './pdfgeneration/pdfgeneration.component';
 import { IochatComponent } from './iochat/iochat.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { IochatComponent } from './iochat/iochat.component';
     MenuBarComponent,
     ForgotPasswordPopupComponent,
     PDFGenerationComponent,
-    IochatComponent
+    IochatComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
