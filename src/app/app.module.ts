@@ -14,6 +14,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { AuthService } from './_serices/authService';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordPopupComponent } from './forgot-password-popup/forgot-password-popup.component';
+import { PDFGenerationComponent } from './pdfgeneration/pdfgeneration.component';
+import { IochatComponent } from './iochat/iochat.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +27,11 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
     FirstComponentComponent,
     EditComponent,
     LoginpageComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    ForgotPasswordPopupComponent,
+    PDFGenerationComponent,
+    IochatComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,9 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger'
     }),
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

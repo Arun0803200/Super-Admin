@@ -1,0 +1,22 @@
+<div class="chat-container">
+    <div class="chat-header">
+      <h2>Chat Room</h2>
+    </div>
+    <div class="chat-messages">
+      <ul>
+        <li *ngFor="let message of messages">{{ message }}</li>
+      </ul>
+    </div>
+    <div class="chat-input">
+      <input
+        [(ngModel)]="message"
+        (keydown.enter)="sendMessage()"
+        placeholder="Type a message..."
+      />
+      <button (click)="sendMessage()">Send</button>
+      <button (click)="pay()">Pay</button>
+      <!-- <button (click)="payNow()">Pay Now</button> -->
+      <button (click)="razorPay()"> Pay Razor Pay </button>
+    </div>
+  </div>
+  

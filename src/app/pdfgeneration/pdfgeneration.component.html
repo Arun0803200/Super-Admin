@@ -1,0 +1,146 @@
+<div class="container border" style="margin: 10px; border-radius: 10px; padding: 10px; background-color: rgb(247, 252, 252);">
+  <form [formGroup]="candidateData">
+  <div>
+    <h3 style="font-weight: 600;">Personal Details: </h3>
+    <div class="common">
+    <div>
+      <label><b>Name:</b></label><br>
+      <input type="text" formControlName="name"><br><br>
+    </div>
+    <div>
+      <label><b>Email:</b></label><br>
+      <input type="text" formControlName="email"><br><br>
+    </div>
+    <div>
+      <label><b>Phone Number:</b></label><br>
+      <input type="text" formControlName="phoneNumber"><br><br>
+    </div>
+    <div>
+      <label><b>Address:</b></label><br>
+      <input type="text" formControlName="address"><br><br>
+    </div>
+    <div>
+      <label><b>Objective:</b></label><br>
+      <input type="text" formControlName="objective">
+    </div>
+    </div>
+  </div>
+  <hr>
+    <!-- Use *ngFor to iterate over the experiences FormArray controls -->
+    <div>
+    <h3 style="font-weight: 600;">Experiences: </h3>
+    <div style = "padding: 10px;" class="common" *ngFor="let containersData of containers; let i = index;">
+      <div style="border: 2px solid #000000; border-radius: 10px; padding: 10px;" class="common" [formGroup]="candidateData.get('experiences')?.controls[i]">
+        <div>
+          <label><b>Company Name:</b></label><br>
+          <input type="text" formControlName="companyName">
+        </div>
+        <div>
+          <label><b>Company Address:</b></label><br>
+          <input type="text" formControlName="companyAddress">
+        </div>
+        <div>
+          <label><b>Starting Date:</b></label><br>
+          <input type="date" formControlName="startingDate">
+        </div>
+        <div>
+          <label><b>Ending Date:</b></label><br>
+          <input type="date" formControlName="endingDate">
+        </div>
+        <div>
+          <label><b>Position:</b></label><br>
+          <input type="text" formControlName="position">
+        </div>
+        <div>
+          <label><b>Summary:</b></label><br>
+          <input type="text" formControlName="summary">
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <p style="cursor: pointer; color: red; font-weight: 400;" (click)="deleteMe(i)">&#10006;</p>
+        </div>
+      </div><br><br>
+    </div>
+    <button class="custom-tooltip-button" (click)="add()">
+      <span class="tooltip-text">Add</span>
+      &#10010;
+    </button>
+    </div> <br>
+    <hr>
+    <div>
+    <h3 style="font-weight: 600;">Education: </h3>
+    <div style = "padding: 10px;" class="common" *ngFor="let educationArrs of educationArr; let i = index;">
+      <div style="border: 2px solid #000000; border-radius: 10px; padding: 10px;"style="border: 2px solid #000000; border-radius: 10px; padding: 10px;" class="common" [formGroup]="candidateData.get('education')?.controls[i]">
+        <div>
+          <label><b>College Name:</b></label>
+          <input type="text" formControlName="collegeName">
+        </div>
+        <div>
+          <label><b>Course:</b></label>
+          <input type="text" formControlName="course" placeholder="Computer Science and Engineering">
+        </div>
+        <div>
+          <label><b>Starting Date:</b></label><br>
+          <input type="date" formControlName="startingDate">
+        </div>
+        <div>
+          <label><b>Ending Date:</b></label><br>
+          <input type="date" formControlName="endingDate">
+        </div>
+        <div>
+          <label><b>Degree:</b></label><br>
+          <select name="degree" formControlName="degree">
+            <option value="B.E">B.E</option>
+            <option value="Arts & Science">Arts & Science</option>
+            <option value="M.B.B.S">M.B.B.S</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <p style="cursor: pointer; color: red; font-weight: 400;" (click)="deleteEdu(i)">&#10006;</p>
+        </div>
+      </div><br>
+    </div>
+    <button class="custom-tooltip-button" (click)="addEducation()">
+      <span class="tooltip-text">Add</span>
+      &#10010;
+    </button>
+    </div><br>
+    <hr>
+    <div>
+    <h3 style="font-weight: 600;">Social Media: </h3>
+    <div style = "padding: 10px;" class="common" *ngFor="let socialMediaContainers of socialMediaContainer; let i = index;">
+      <div style="border: 2px solid #000000; border-radius: 10px; padding: 10px;"style="border: 2px solid #000000; border-radius: 10px; padding: 10px;" class="common" [formGroup]="candidateData.get('socialMedia')?.controls[i]">
+        <div>
+          <label><b>Name:</b></label>
+          <input type="text" formControlName="name" placeholder="Facebook">
+        </div>
+        <div>
+          <label><b>Link:</b></label>
+          <input type="text" formControlName="link" placeholder="Enter Your account">
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <p style="cursor: pointer; color: red; font-weight: 400;" (click)="deleteSocialMedia(i)">&#10006;</p>
+        </div>
+      </div><br>
+    </div>
+    <button class="custom-tooltip-button" (click)="addSocialMedia()">
+      <span class="tooltip-text">Add</span>
+      &#10010;
+    </button>
+    <br><br>
+    <hr>
+    <div><br>
+      <label for="filePicker">Choose or drag a file:</label><br>
+      <input type="file" id="filePicker" (change)="handleFileSelect($event)">
+    </div>
+    </div><br><br>
+    <p><button style="border: 2px solid #181818; font-weight: 500; border-radius: 2px; padding: 5px; background-color: rgb(170, 170, 170); width: 5%; color: rgb(0, 0, 0);">Cancel</button>&nbsp;&nbsp;&nbsp;<button style="border: none; font-weight: 500; border-radius: 2px; padding: 5px; background-color: blue; width: 5%; color: white;" (click)="onSubmit()">Submit</button></p>
+  </form>
+</div>
+<div>
+  <br>
+  <div>
+      <h1>Base64 encoded version</h1>
+      <textarea id="base64textarea" placeholder="Base64 will appear here" cols="50" rows="15">{{base64textString}}</textarea>
+  </div>
+</div>
