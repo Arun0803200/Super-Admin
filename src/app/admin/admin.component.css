@@ -1,16 +1,69 @@
 .common {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;         /* Center items horizontally */
+  flex-direction: column;
+  height: 90vh;
+  /* full screen height */
   max-width: 1000px;
-  margin: 0 auto;                  /* Centers the container itself*/
-  padding: 20px;                   /* Optional spacing inside the container */
+  margin: auto;
+  box-sizing: border-box;
+  padding: 0;
+  /* Remove padding to not affect height distribution */
+  background-color: rgb(202, 184, 218);
+  border-radius: .3rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.item {
-  flex: 0 0 25%;                   /* 4 items per row */
-  box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: start;
+.head {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(41, 6, 71);
+}
+
+.content {
+  height: 80vh;
+  overflow-y: auto;
+  /* scroll if needed */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+}
+
+.footer {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.footer button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: .3rem;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 1.8rem;
+  padding-inline: .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(41, 6, 71);
+  border-radius: .3rem;
+  border: solid 1px #E1E6F1;
+  outline: none;
+}
+
+label {
+  font-weight: 300;
+  color: rgb(41, 6, 71);
 }

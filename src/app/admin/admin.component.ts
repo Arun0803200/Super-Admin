@@ -13,4 +13,12 @@ export class AdminComponent {
   ngOnInit() {
     this.adminData = this.formBuilder.group({});
   }
+  adminGroup = [
+    {
+      name: 'Admin',
+    },
+    {
+      name: 'Manager',
+    },
+  ];
 }
